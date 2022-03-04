@@ -41,4 +41,7 @@ Answer:
 - Are you ready to play Black Jack?
 - Would you like to hit?
 
+
+<img width="564" alt="Black_Jack" src="https://user-images.githubusercontent.com/69823896/156737015-b8d87156-ddbf-4c96-893b-69016b63596d.png">
+
 Once the score is reached, the game will return a message either of Congratulations or Failure compared to the dealer's hand, as well as the total tally score across all games
