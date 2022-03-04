@@ -63,15 +63,22 @@ func dealerTurn() {
 
 func playerTurn() {
 	var twist = "t"
+	var response string
 	for userRequestCard := true; userRequestCard; userRequestCard = (!strings.EqualFold(twist, "s")) {
 		currentCard := newCardGenerator()
 		playerScore += currentCard
 		if playerScore > 21 {
 			fmt.Print(playerName + " you've gone bust with " + strconv.Itoa(playerScore) + "\n")
 			twist = "s"
+			dealerTurn()
 		} else {
-			fmt.Print("You have " + strconv.Itoa(playerScore) + " would you like to stick or twist\n")
-			fmt.Scan(&twist)
+			fmt.Print("You have " + strconv.Itoa(playerScore) + " would you like to hit or quit\n")
+			fmt.Scan(&response)
+			if strings.EqualFold(response, "hit") {
+				fmt.Scan(&twist)
+			} else if strings.EqualFold(response, "quit") {
+				exitGame()
+			}
 		}
 	}
 }
