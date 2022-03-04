@@ -97,7 +97,7 @@ func exitGame() {
 	if strings.EqualFold(playerQuit, "Y") {
 		fmt.Print("Bye, thanks for playing\n")
 	} else if strings.EqualFold(playerQuit, "N") {
-		playBlackjack()
+		continueGame()
 	} else {
 		fmt.Print("Sorry, we didn't recognise that, please enter 'Y' or 'N'\n")
 		exitGame()
@@ -119,29 +119,9 @@ func continueGame() {
 	}
 }
 
-func showRules() {
-	var userRuleChoice string
-	fmt.Print(playerName + " Would you like to view the rules? (Y/N)\n")
-	fmt.Scan(&userRuleChoice)
-	if strings.EqualFold(userRuleChoice, "Y") {
-		fmt.Printf("LMGTFY\n")
-		showRules()
-	} else if strings.EqualFold(userRuleChoice, "N") {
-		fmt.Print("Ok, let's begin " + playerName + "\n")
-		continueGame()
-	} else {
-		fmt.Print("Sorry, we didn't recognise that, please enter 'Y' or 'N'\n")
-		showRules()
-	}
-}
-
-func playBlackjack() {
-	showRules()
-}
-
 //Main Execution
 func main() {
 	fmt.Printf("Please enter your name:\n")
 	fmt.Scan(&playerName)
-	playBlackjack()
+	continueGame()
 }
